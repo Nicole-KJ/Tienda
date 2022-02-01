@@ -1,0 +1,71 @@
+/* 
+    Created on : Jan. 31, 2022, 6:14:43 p.m.
+    Author     : Keren Nicole Jimenez Fernandez
+*/
+
+/* unidades de medida:
+    vh: 1/100
+    %: respecto al elemento padre
+    px: pixeles
+    cm: centimetros*/
+
+/* comment */
+.container{
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/background.png);
+    background-size: cover; /* no distorciona imagen */
+    padding-left: 5%; /* padding: espacio entre componenetesd */
+    box-sizing: border-box; /* alto = alto + espacio + borde */
+    position: relative;
+}
+
+.navbar{
+    width: 100%;
+    height: 15vh;
+    margin: auto; /* margin da espacio alrededor de elementos */
+    display: flex; /* se comporta de manera flexible en el div */
+    align-items: center; /* alineados al centro */
+}
+
+.logo{
+    width: 160px;
+    cursor: pointer; 
+}
+
+nav{
+    flex: 1;
+    padding-left: 60px;
+}
+
+nav ul li{
+    display: inline-block; 
+    list-style: none;
+    margin: 0px 20px;
+    
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #006666;
+}
+
+.content{
+    margin-top: 10%;
+    margin-left: 10%;
+}
+
+.content h1{
+    font-size: 60px;
+    font-weight: 100;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    color: #5c5c99;
+}
+
+.content p{
+    font-size: 20px;
+    color: #5c5c99;
+}
+
+/* comment */
