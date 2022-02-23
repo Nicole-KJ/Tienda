@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--comment-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Tienda | Cliente</title>
+        <!--<link rel="stylesheet" href="css/modificarPersona.css">-->
+    </head>
+    
+    <body>
+        <div class="container">
+
+            <h1>Datos de Cliente</h1>
+            <div class="back"><a th:ref-="@{/}">Regersar</a></div>
+            <!--<div class="back"><a href='home.html'>Home</a></div>-->
+            <div class="registro">
+                <form th:action="@{guardarPersona}"
+                      method="post"
+                      th:object=""${persona}>
+
+                    <input type="hidden" name="idPersona" th:field="*{idPersona}" required/>
+                    <br>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" name="nombre" th:field="*{nombre}" required/>
+                    <br>
+                    <label>Primer Apellido</label>
+                    <input type="text" name="apellido1" th:field="*{apellido1}" required/> 
+                    <br>
+                    <label>Segundo Apellido</label>
+                    <input type="text" name="apellido2" th:field="*{apellido2}" required/> 
+                    <br> 
+                    <label>Correo</label>
+                    <input type="email" placeholder="xxxxxxxxxxx@xxxxxxxxx.xxx" required th:field="*{correo}"/>
+                    <br>
+                    <label>Telefono</label>
+                    <input type="text" placeholder="(506)1234-5678"
+                           pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"required
+                           th:field="*{telefono}"/>
+                    <br>
+                    <br>
+                    <input type="submit" name="guardar" value="Guardar"/>
+
+                </form>
+
+            </div>
+        </div>
+    </body>
+</html>

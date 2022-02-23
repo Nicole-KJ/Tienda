@@ -5,6 +5,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
 
 *{
+    
+    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -70,7 +72,7 @@ form .txt_field{
 
 a{
     display: inline-block;
-    font-size: 1 em;
+    font-size: 1em;
     background: #1ABC9C;
     padding: 10px 30px;
     
