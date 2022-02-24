@@ -31,18 +31,20 @@ public class PersonasController {
         return "modificarPersona";
     }
     
-
+/**
+ * Arreglar errores
+ */
     @PostMapping("/guardarPersona")
     public String guardarPersona(Persona persona){
-//        IPersonaService.savePerson(persona);
-//        PersonaService.savePerson(persona);
+        IPersonaService.savePerson(persona);
+        PersonaService.savePerson(persona);
         return "redirect:/";
     }
-//    
-//    @GetMapping("/modificarPersona/{idPersona}")
-//    public String modificarCliente(Persona persona, Model model){
-//        persona = IPersonaService.getPersonById();
-//        model.addAttribute("persona", persona);
-//        return "modificarPersona";
-//    }
+    
+    @GetMapping("/modificarPersona/{idPersona}")
+    public String modificarCliente(Persona persona, Model model){
+        persona = IPersonaService.getPersonById();
+        model.addAttribute("persona", persona);
+        return "modificarPersona";
+    }
 }
