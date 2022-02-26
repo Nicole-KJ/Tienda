@@ -31,7 +31,7 @@ public class PersonasController {
         return "modificarPersona";
     }
     
-/**
+/*
  * Arreglar errores
  */
     @PostMapping("/guardarPersona")
@@ -42,9 +42,13 @@ public class PersonasController {
     }
     
     @GetMapping("/modificarPersona/{idPersona}")
-    public String modificarCliente(Persona persona, Model model){
+    public String modificarPersona(Persona persona, Model model){
         persona = IPersonaService.getPersonById();
         model.addAttribute("persona", persona);
         return "modificarPersona";
     }
+    
+/*
+ * Seccion de eliminar
+ */
 }

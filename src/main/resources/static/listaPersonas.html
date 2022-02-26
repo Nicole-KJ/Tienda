@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--comment-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Modificar Persona</title>
+        <!--<link rel="stylesheet" href="css/modificarPersona.css">-->
+    </head>
+    
+    <body>
+        <div class="container">
+
+            <h1>Modificar Persona</h1>
+            <div class="back"><a th:ref="@{/guardarPersona}">Guardar Persona</a></div>
+            <!--<div class="back"><a href='home.html'>Home</a></div>-->
+            <div th:if="{persona != null and !persona.empty}">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Primer Apellido</th>
+                            <th>Segundo Apellido</th>
+                            <th>Correo</th>
+                            <th>Telefono</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="persona : ${persona}">
+                            <td th:text="${persona.id}"></td>
+                            <td th:text="${persona.nombre}"></td>
+                            <td th:text="${persona.apellido1}"></td>
+                            <td th:text="${persona.apellido2}"></td>
+                            <td th:text="${persona.correo}"></td>
+                            <td th:text="${persona.telefono}"></td>
+                            <td><a th:href="@/modificarPersona/} + ${perosna.id}"></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div th:if="${persona == null or persona.empty">
+                No tenemos lista de clientes que mostrar...
+            </div>
+       
+        </div>
+    </body>
+</html>
