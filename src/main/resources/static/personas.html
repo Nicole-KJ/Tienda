@@ -16,23 +16,26 @@
                 <table border="1">
                     <thead>
                         <tr>
-                            <th>Id</th>
                             <th>Nombre</th>
                             <th>Primer Apellido</th>
                             <th>Segundo Apellido</th>
                             <th>Correo</th>
                             <th>Telefono</th>
+                            <th>Pais</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="persona : ${persona}">
+                        <th:block th:each="persona : ${persona}">
+                        <tr>
                             <td th:text="${persona.id}"></td>
                             <td th:text="${persona.nombre}"></td>
                             <td th:text="${persona.apellido1}"></td>
                             <td th:text="${persona.apellido2}"></td>
                             <td th:text="${persona.correo}"></td>
                             <td th:text="${persona.telefono}"></td>
-                            <td><a th:href="@/modificarPersona/} + ${perosna.id}"></a></td>
+                            <td th:text="${persona.pais}"></td>
+                            <!--<td><a th:href="@/modificarPersona/} + ${perosna.id}"></a></td>-->
+                            <td><a th:href="@/delete/{id}} (id=${persona.getID})}"></a>Delete</td>
                         </tr>
                     </tbody>
                 </table>

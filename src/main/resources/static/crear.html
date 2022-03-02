@@ -13,35 +13,34 @@
             <div class="back"><a th:ref-="@{/}">Regersar</a></div>
             <!--<div class="back"><a href='home.html'>Home</a></div>-->
             <div class="registro">
-                <form th:action="@{guardarPersona}"
-                      method="post"
-                      th:object=""${persona}>
-
-                    <input type="hidden" name="idPersona" th:field="*{idPersona}" required/>
-                    <br>
+                <form th:object="${persona}"
+                      th:action="@{/save}"
+                      method="POST">
                     <label for="nombre">Nombre:</label>
                     <input type="text" name="nombre" th:field="*{nombre}" required/>
                     <br>
-                    <label>Primer Apellido</label>
+                    <label for="apellido1">Primer Apellido</label>
                     <input type="text" name="apellido1" th:field="*{apellido1}" required/> 
                     <br>
-                    <label>Segundo Apellido</label>
+                    <label for="apellido2">Segundo Apellido</label>
                     <input type="text" name="apellido2" th:field="*{apellido2}" required/> 
                     <br> 
-                    <label>Correo</label>
+                    <label for="correo">Correo</label>
                     <input type="email" placeholder="xxxxxxxxxxx@xxxxxxxxx.xxx" required th:field="*{correo}"/>
                     <br>
-                    <label>Telefono</label>
+                    <label for="telefono">Telefono</label>
                     <input type="text" placeholder="(506)1234-5678"
                            pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"required
                            th:field="*{telefono}"/>
+                    <br> 
+                    <label for="pais">Pais</label>
+                    <input type="text" required th:field="*{pais}"/>
                     <br>
                     <br>
                     <input type="submit" name="guardar" value="Guardar"/>
-
                 </form>
-
             </div>
+            
         </div>
     </body>
 </html>

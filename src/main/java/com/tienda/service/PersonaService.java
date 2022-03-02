@@ -2,12 +2,13 @@
  * @author KEREN NICOLE JIMENEZ FERNANDEZ
  */
 package com.tienda.service;
-
 import com.tienda.entity.Persona;
-import com.tienda.repository.PersonaRepository;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.Optional;
+import com.tienda.service.IPersonaService;
+import com.tienda.repository.PersonaRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
 public class PersonaService implements IPersonaService{
