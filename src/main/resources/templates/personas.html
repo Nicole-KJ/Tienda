@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--comment-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Modificar Persona</title>
+        <!--<link rel="stylesheet" href="css/modificarPersona.css">-->
+    </head>
+
+    <body>
+        <h1 th:text="${titulo}"></h1>
+        <div class="container">
+            <!--<div class="back"><a th:ref="@{/guardarPersona}">Guardar Persona</a></div>-->
+            <!--<div class="back"><a href='home.html'>Home</a></div>-->
+            <div >
+                <table border="1">
+                    <thead class=""thead-dark>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Primer Apellido</th>
+                            <th>Segundo Apellido</th>
+                            <th>Correo</th>
+                            <th>Telefono</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <th:block th:each="user : ${personas}">
+                            <tr>
+                                <td th:text="${user.getNombre}"></td>
+                                <td th:text="${user.getApellido1}"></td>
+                                <td th:text="${user.getApellido2}"></td>
+                                <td th:text="${user.getEmail}"></td>
+                                <td th:text="${user.getTelefono}"></td>
+                                <td th:text="${user.getPais}"></td> 
+                                <!--Modificar-->
+                                
+                                <!--Eliminar-->
+                                <td><a th:href="@{/delete/{id}(id = ${user.getId})}" >Eliminar</a></td>
+                            </tr>
+                        </th:block>
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </body>
+</html>

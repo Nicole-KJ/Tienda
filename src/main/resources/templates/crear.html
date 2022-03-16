@@ -2,7 +2,7 @@
 <!--comment-->
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>Tienda | Cliente</title>
+        <title>Crear Cliente</title>
         <!--<link rel="stylesheet" href="css/modificarPersona.css">-->
     </head>
     
@@ -10,12 +10,14 @@
         <div class="container">
 
             <h1>Datos de Cliente</h1>
-            <div class="back"><a th:ref-="@{/}">Regersar</a></div>
+            <div class="back"><a th:ref-="@{/index}">Regersar</a></div>
             <!--<div class="back"><a href='home.html'>Home</a></div>-->
             <div class="registro">
+                
                 <form th:object="${persona}"
                       th:action="@{/save}"
                       method="POST">
+                    <!--<input type ="hidden" name = "id" th:field="*{id}"/>-->
                     <label for="nombre">Nombre:</label>
                     <input type="text" name="nombre" th:field="*{nombre}" required/>
                     <br>
@@ -26,18 +28,18 @@
                     <input type="text" name="apellido2" th:field="*{apellido2}" required/> 
                     <br> 
                     <label for="correo">Correo</label>
-                    <input type="email" placeholder="xxxxxxxxxxx@xxxxxxxxx.xxx" required th:field="*{correo}"/>
+                    <input type="email" placeholder="xxxxxxxxxxx@xxxxxxxxx.xxx" required th:field="*{email}"/>
                     <br>
                     <label for="telefono">Telefono</label>
-                    <input type="text" placeholder="(506)1234-5678"
-                           pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"required
+                    <input type="text" placeholder="1234-5678" required
                            th:field="*{telefono}"/>
                     <br> 
                     <label for="pais">Pais</label>
                     <input type="text" required th:field="*{pais}"/>
                     <br>
                     <br>
-                    <input type="submit" name="guardar" value="Guardar"/>
+                    <!--<input type="submit" name="guardar" value="Guardar"/>-->
+                    <button type="submit" value="Guardar">Submit</button>
                 </form>
             </div>
             

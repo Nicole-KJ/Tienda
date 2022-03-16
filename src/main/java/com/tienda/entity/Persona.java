@@ -4,7 +4,13 @@
 package com.tienda.entity;
 
 import java.io.Serializable;
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
 @Table (name="personas")
@@ -12,6 +18,7 @@ public class Persona implements Serializable{
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private long id;
+    private String nombre;
     private String apellido1;
     private String apellido2;
     private String telefono;
@@ -68,6 +75,13 @@ public class Persona implements Serializable{
     public void setPais(Pais pais) {
         this.pais = pais;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     
-   
 }

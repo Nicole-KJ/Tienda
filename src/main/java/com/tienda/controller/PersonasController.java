@@ -5,7 +5,6 @@ package com.tienda.controller;
 
 import com.tienda.entity.Persona;
 import com.tienda.service.IPersonaService;
-import com.tienda.service.PersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class PersonasController {
     @Autowired
     private IPersonaService personaService;
+    
     @GetMapping("/personas")
     public String index(Model model){
         List<Persona> listaPersonas=personaService.getAllPerson();
@@ -36,13 +36,13 @@ public class PersonasController {
     @PostMapping("/save")
     public String guardarPersona(@ModelAttribute Persona persona){
         personaService.savePerson(persona);
-        return "redirect:/persona";
+        return "redirect:/personas";
     }
     
     @GetMapping("/delete/{id}")
     public String modificarPersona(@PathVariable("id") Long idPersona){
         personaService.delete(idPersona);
-        return "redirect:/persona";
+        return "redirect:/personas";
     }
     
 }
