@@ -3,7 +3,9 @@
  */
 package com.tienda.controller;
 
+import com.tienda.entity.Pais;
 import com.tienda.entity.Persona;
+import com.tienda.service.IPaisService;
 import com.tienda.service.IPersonaService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class PersonasController {
     @Autowired
     private IPersonaService personaService;
+    private IPaisService paisService;
     
     @GetMapping("/personas")
     public String index(Model model){
@@ -29,7 +32,9 @@ public class PersonasController {
     
     @GetMapping("/personasN")
     public String crearPersona(Model model){
+        List<Pais> listaPais = paisService.listCountry();
         model.addAttribute("persona", new Persona());
+        model.addAttribute("paises", listaPais);
         return "crear";
     }
     
