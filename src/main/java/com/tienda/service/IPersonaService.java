@@ -6,6 +6,7 @@ package com.tienda.service;
 import com.tienda.entity.Persona;
 import java.util.List;
 import org.springframework.stereotype.Repository;
+//import org.springframework.data.repository.CrudRepository;
 
 @Repository
 public interface IPersonaService {

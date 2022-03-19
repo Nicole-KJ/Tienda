@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <!--comment-->
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>Modificar Persona</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-    </head>
+    <head th:replace="plantilla/template::head"></head>
 
     <body>
         <h1 th:text="${titulo}"></h1>
@@ -21,6 +18,7 @@
                             <th>Correo</th>
                             <th>Telefono</th>
                             <th>Pais</th>
+                            <th>Editar</th>
                             <th>Eliminar</th>
                         </tr>
                     </thead>
@@ -34,7 +32,7 @@
                                 <td th:text="${user.getTelefono}"></td>
                                 <td th:text="${user.getPais}"></td> 
                                 <!--Modificar-->
-                                
+                                <td><a th:href="@{/editPersona/} + ${user.getId}">Editar</a></td>
                                 <!--Eliminar-->
                                 <td><a th:href="@{/delete/{id}(id = ${user.getId})}" >Eliminar</a></td>
                             </tr>

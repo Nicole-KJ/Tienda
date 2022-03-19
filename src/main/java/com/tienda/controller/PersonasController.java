@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class PersonasController {
     @Autowired
     private IPersonaService personaService;
+    @Autowired
     private IPaisService paisService;
     
     @GetMapping("/personas")
@@ -49,5 +50,7 @@ public class PersonasController {
         personaService.delete(idPersona);
         return "redirect:/personas";
     }
+    
+    //continue at minute 35
     
 }
