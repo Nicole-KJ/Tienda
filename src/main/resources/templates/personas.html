@@ -30,11 +30,11 @@
                                 <td th:text="${user.getApellido2}"></td>
                                 <td th:text="${user.getEmail}"></td>
                                 <td th:text="${user.getTelefono}"></td>
-                                <td th:text="${user.getPais}"></td> 
+                                <td th:text="${user.getPais.getPais}"></td> 
                                 <!--Modificar-->
-                                <td><a th:href="@{/editPersona/} + ${user.getId}">Editar</a></td>
+                                <td><a th:href="@{/editPersona/{id}(id = ${user.getId})}">Editar</a></td>
                                 <!--Eliminar-->
-                                <td><a th:href="@{/delete/{id}(id = ${user.getId})}" >Eliminar</a></td>
+                                <td><a th:href="@{/delete/{id}(id = ${user.getId})}">Eliminar</a></td>
                             </tr>
                         </th:block>
                     </tbody>
