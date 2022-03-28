@@ -11,48 +11,31 @@
             <div class="card-header bg-black text-white"></div>
             <div class="card-body">
 
-                <h1>Datos de Cliente</h1>
-                <div class="back"><a th:ref-="@{/index}">Regersar</a></div>
+                <h1 th:text="#{cliente.datos}">Datos de Cliente</h1>
+                <div class="back"><a th:ref-="@{/index}" th:text="#{accion.regresar}">Regersar</a></div>
 
                 <div class="container">
                     
-                    <!--agregar un form template dde bootstrap-->
-                    <!--<form>
-                          <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                          </div>
-                          <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                          </div>
-                          <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                          </div>
-                          <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>-->
                     <form th:object="${persona}"
                           th:action="@{/save}"
                           method="POST">
                         <input type ="hidden" th:field="*{id}"/>
-                        <label for="nombre">Nombre:</label>
+                        <label th:text="#{cliente.nombre}" for="nombre">Nombre:</label>
                         <input type="text" name="nombre" th:field="*{nombre}" required/>
                         <br>
-                        <label for="apellido1">Primer Apellido</label>
+                        <label th:text="#{cliente.apellidos}" for="apellido1">Primer Apellido</label>
                         <input type="text" name="apellido1" th:field="*{apellido1}" required/> 
                         <br>
-                        <label for="apellido2">Segundo Apellido</label>
+                        <label th:text="#{cliente.apellidos}" for="apellido2">Segundo Apellido</label>
                         <input type="text" name="apellido2" th:field="*{apellido2}" required/> 
                         <br> 
-                        <label for="correo">Correo</label>
+                        <label th:text="#{cliente.correo}" for="correo">Correo</label>
                         <input type="email" placeholder="xxxxxxxxxxx@xxxxxxxxx.xxx" required th:field="*{email}"/>
                         <br>
-                        <label for="telefono">Telefono</label>
+                        <label th:text="#{cliente.telefono}" for="telefono">Telefono</label>
                         <input type="text" placeholder="1234-5678" required th:field="*{telefono}">
                         <br> 
-                        <label for="paises">Pais</label>
+                        <label th:text="#{cliente.pais}" for="paises">Pais</label>
                         <!--<input type="text" required th:field="*{pais}"/>-->
                         <select th:field="*{pais}" class="form-control form-control-sm col-md-6" id="pais" aria-describedby="emailHelp">
                             <option th:each="x:${paises}"
@@ -62,7 +45,7 @@
                         <br>
                         <br>
                         
-                        <button type="submit" value="Guardar">Submit</button>
+                        <button type="submit" value="Guardar" th:text="#{accion.guardar}">Submit</button>
                     </form>
 
                 </div>

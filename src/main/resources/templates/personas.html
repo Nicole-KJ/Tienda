@@ -5,6 +5,7 @@
 
     <body>
         <h1 th:text="${titulo}"></h1>
+        <h1 th:text="#{plantilla.personas}">XXX</h1>
         <div class="container">
             <!--<div class="back"><a th:ref="@{/guardarPersona}">Guardar Persona</a></div>-->
             <!--<div class="back"><a href='home.html'>Home</a></div>-->
@@ -12,14 +13,14 @@
                 <table border="1" class="table table-success table-striped">
                     <thead class=""thead-dark>
                         <tr>
-                            <th>Nombre</th>
-                            <th>Primer Apellido</th>
-                            <th>Segundo Apellido</th>
-                            <th>Correo</th>
-                            <th>Telefono</th>
-                            <th>Pais</th>
-                            <th>Editar</th>
-                            <th>Eliminar</th>
+                            <th th:text="#{cliente.nombre}">Nombre</th>
+                            <th th:text="#{cliente.apellidos}">Primer Apellido</th>
+                            <th th:text="#{cliente.apellidos}">Segundo Apellido</th>
+                            <th th:text="#{cliente.correo}">Correo</th>
+                            <th th:text="#{cliente.telefono}">Telefono</th>
+                            <th th:text="#{cliente.pais}">País</th>
+                            <th th:text="#{accion.actualizar}">Editar</th>
+                            <th th:text="#{accion.eliminar}">Eliminar</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -32,9 +33,9 @@
                                 <td th:text="${user.getTelefono}"></td>
                                 <td th:text="${user.getPais.getPais}"></td> 
                                 <!--Modificar-->
-                                <td><a th:href="@{/editPersona/{id}(id = ${user.getId})}">Editar</a></td>
+                                <td><a th:href="@{/editPersona/{id}(id = ${user.getId})}" th:text="#{accion.actualizar}">Editar</a></td>
                                 <!--Eliminar-->
-                                <td><a th:href="@{/delete/{id}(id = ${user.getId})}">Eliminar</a></td>
+                                <td><a th:href="@{/delete/{id}(id = ${user.getId})}" th:text="#{accion.eliminar}">Eliminar</a></td>
                             </tr>
                         </th:block>
                     </tbody>
