@@ -13,17 +13,15 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserService implements UserDetailsService{
+public class UserService implements UserDetailsService {
 
     @Autowired
     IPersonaService personaService;
-    
+
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
-        Persona p = personaService.findByNombre(username);
-        List <GrantedAuthority> roles = new ArrayList<>();
-        roles.add(new SimpleGrantedAuthority ("ADMIN"));
-        UserDetails userDet = new User(p.getNombre(), p.getApellido1(),roles);
-        return userDet;
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Persona persona = this.personaService.findByNombre(username);
+        UserPrincipal userprincipal = new UserPrincipal(persona);
+        return userprincipal;
     }
 }
