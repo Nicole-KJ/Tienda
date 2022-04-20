@@ -54,12 +54,18 @@
             <version>2.6.3</version>
             <type>module</type>
         </dependency>
-        
+        <!--
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.25</version>
         </dependency>
+        -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+	</dependency>
         
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -69,6 +75,13 @@
         <dependency>
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-springsecurity5</artifactId>
+        </dependency>
+        
+        <!-- JASPER REPORT DEPENDENCY -->
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>6.17.0</version>
         </dependency>
         
     </dependencies>
